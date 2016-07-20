@@ -25,11 +25,94 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* Application theme */
 
-  #kyle {
-    position: relative;
-    left: 10%;
+  h1 {
+    font-family: "din-condensed-web";
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    text-align: center;
   }
 
+  #menuWrapper {
+    position: absolute;
+    top: 22%;
+    width: 100%;
+  }
+  .menuItem {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 100%;
+  }
+  .menuItem iron-icon{
+    position: relative;
+    top: -7px;
+    left: 26px;
+    opacity: 0.54;
+  }
+  .superText {
+    font-family: "din-condensed-web";
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .hrLeft {
+    display: block;
+    float: left;
+    border-style: inset;
+    border-width: 1px;
+    width: 32%;
+    left: 22px;
+    position: relative;
+  }
+  .hrRight {
+    display: block;
+    float: right;
+    border-style: inset;
+    border-width: 1px;
+    width: 32%;
+    right: 22px;
+    position: relative;
+  }
+  .subText {
+    font-family: "din-condensed-web";
+    font-size: .75rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  paper-menu {
+    --paper-menu-selected-item: {
+      color: var(--primary-color);
+    }
+
+    --paper-menu-focused-item-after: {
+      background: var(--primary-color);
+    }
+  }
+
+  /*paper-menu iron-icon {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.54;
+  }*/
+  paper-menu a {
+    @apply(--layout-horizontal);
+    @apply(--layout-center);
+    text-decoration: none;
+    color: var(--menu-link-color);
+    font-family: "din-condensed-web";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    min-height: 48px;
+    padding: 0 16px;
+  }
+  paper-menu a:hover {
+    background: #eee;
+    color: crimson;
+  }
   :root {
     --primary-text-color: var(--paper-grey-900);
     --primary-background-color: #ffffff;
@@ -80,37 +163,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 100%;
   }
 
-  paper-menu {
-    --paper-menu-selected-item: {
-      color: var(--primary-color);
-    }
-
-    --paper-menu-focused-item-after: {
-      background: var(--primary-color);
-    }
-  }
-
-  paper-menu iron-icon {
-    margin-right: 33px;
-    opacity: 0.54;
-  }
-
-  paper-menu a {
-    @apply(--layout-horizontal);
-    @apply(--layout-center);
-
-    text-decoration: none;
-    color: var(--menu-link-color);
-    font-family: 'Roboto', 'Noto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    min-height: 48px;
-    padding: 0 16px;
-  }
-
   #mainToolbar.tall .app-name {
     font-size: 40px;
     font-weight: 300;
@@ -146,8 +198,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* Height of the scroll area */
   .content {
-    height: 900px;
-    background-image: url("../images/beach.jpg");
+    height: 100%;
+    background: #fefbf7;
+    background: #fefbf7; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, ,rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Standard*/
+    /*background-image: url("../images/beach.jpg");*/
   }
 
   section[data-route="home"] paper-material {
@@ -164,7 +222,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     padding: 16px 0 16px 0;
     width: calc(98.66% - 16px);
     margin: 16px auto;
-    background: white;
+    background: transparent;
+    box-shadow: none;
   }
 
   #toast .toast-hide-button {

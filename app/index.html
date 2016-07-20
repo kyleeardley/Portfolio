@@ -88,54 +88,65 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-scroll-header-panel drawer fixed>
 
         <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="menu-name">Menu</span>
-        </paper-toolbar>
+        
 
         <!-- Drawer Content -->
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
-          <div id='kyle'><img src='../images/kyle.jpg' style='position:relative; left:5%;'></div>
-          <a data-route="home" href="{{baseUrl}}">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+        <div id='menuWrapper'>
+          <a data-route="home" href="{{baseUrl}}about">
+            <div class='menuItem'>
+              <div class='superText'>About</div>
+              <hr class='hrLeft'>
+              <hr class='hrRight'>
+              <iron-icon icon="home"></iron-icon>
+              <div class='subText'>Who Am I</div>
+            </div>
           </a>
-
           <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+            <div class='menuItem'>
+              <div class='superText'>Work</div>
+              <hr class='hrLeft'>
+              <hr class='hrRight'>
+              <iron-icon icon="work"></iron-icon>
+              <div class='subText'>My Projects</div>
+            </div>
           </a>
-
           <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
+              <div class='menuItem'>
+              <div class='superText'>Contact</div>
+              <hr class='hrLeft'>
+              <hr class='hrRight'>
+              <iron-icon icon="perm-identity"></iron-icon>
+              <div class='subText'>Get In Touch</div>
+            </div>
           </a>
+          <a data-route="skills" href="{{baseUrl}}skills">
+              <div class='menuItem'>
+              <div class='superText'>Skills</div>
+              <hr class='hrLeft'>
+              <hr class='hrRight'>
+              <iron-icon icon="build"></iron-icon>
+              <div class='subText'>Current Awesomeness</div>
+            </div>
+          </a>
+        </div>
         </paper-menu>
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
       <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
-        <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="medium-tall">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-
-          <span class="space"></span>
-
-          <!-- Application name -->
-          <div class="middle middle-container">
-            <div class="app-name">Developer</div>
-          </div>
-
-          <!-- Application sub title -->
-          <div class="bottom bottom-container">
-            <div class="bottom-title">Kyle Eardley</div>
-          </div>
-        </paper-toolbar>
-
+        
         <!-- Main Content -->
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
+              
+
+
+
+
               <paper-material elevation="1">
+              <img src='../images/kyle.png' style='float:right;'>
                 <my-greeting class="focus-target" tabindex="-1"></my-greeting>
 
                 <p class="subhead">You now have:</p>
@@ -186,10 +197,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section data-route="contact">
-              <paper-material elevation="1">
-                <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
-                <p>This is the contact section</p>
-              </paper-material>
+              <contact-me></contact-me>
             </section>
           </iron-pages>
         </div>
@@ -219,6 +227,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <!-- build:js scripts/app.js -->
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDwDkbPYs3wcSSPV8XCy7hULi2bHu2Tp0U",
+    authDomain: "portfolio-c0c8b.firebaseapp.com",
+    databaseURL: "https://portfolio-c0c8b.firebaseio.com",
+    storageBucket: "portfolio-c0c8b.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>
