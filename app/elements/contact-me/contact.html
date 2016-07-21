@@ -1,20 +1,18 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
 
-<dom-module id="contact">
+<dom-module id="contact-me">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
       }
 
-      span,
-      input {
-        @apply(--paper-font-body2);
-      }
+     
     </style>
 
     
-<h1>Hell</h1>
+<h1>Contact</h1>
 <form is="iron-form" method="get" action="/" id="eventsDemo">
   <paper-input name="name" label="Name" required auto-validate></paper-input>
   <paper-input name="password" label="Password" type="password" required auto-validate></paper-input>
@@ -57,7 +55,7 @@
       'use strict';
 
       Polymer({
-        is: 'contact',
+        is: 'contact-me',
 
         properties: {
           greeting: {

@@ -93,16 +93,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Drawer Content -->
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
         <div id='menuWrapper'>
-          <a data-route="home" href="{{baseUrl}}about">
+          <a data-route="about" href="{{baseUrl}}about">
             <div class='menuItem'>
               <div class='superText'>About</div>
               <hr class='hrLeft'>
               <hr class='hrRight'>
-              <iron-icon icon="home"></iron-icon>
+              <iron-icon icon="help"></iron-icon>
               <div class='subText'>Who Am I</div>
             </div>
           </a>
-          <a data-route="users" href="{{baseUrl}}users">
+          <a data-route="work" href="{{baseUrl}}work">
             <div class='menuItem'>
               <div class='superText'>Work</div>
               <hr class='hrLeft'>
@@ -160,44 +160,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-material elevation="1">
                 <h2 id="license">License</h2>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
                 <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-                <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
-                </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
               </paper-material>
             </section>
 
-            <section data-route="users">
+            <section data-route="about">
               <paper-material elevation="1">
-                <h1 class="page-title focus-target" tabindex="-1">Users</h1>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
+              <about-me class="focus-target" tabindex="-1"></about-me>
+              </paper-material>
+            </section>
+
+            <section data-route="work">
+              <paper-material elevation="1">
+                <my-work class="focus-target" tabindex="-1"></my-work>
               </paper-material>
             </section>
 
             <section data-route="user-info">
               <paper-material elevation="1">
                 <h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>
-                <div>This is {{params.name}}'s section</div>
+                
               </paper-material>
             </section>
 
             <section data-route="contact">
-              <contact-me></contact-me>
+              <paper-material elevation="1">
+                <contact-me class="focus-target" tabindex="-1"></contact-me>
+              </paper-material>
+            </section>
+
+             <section data-route="skills">
+              <paper-material elevation="1">
+                <my-skills class="focus-target" tabindex="-1"></my-skills>
+              </paper-material>
             </section>
           </iron-pages>
         </div>

@@ -53,8 +53,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       setFocus(app.route);
     });
 
-    page('/users', function() {
-      app.route = 'users';
+    page('/about', function() {
+      app.route = 'about';
+      setFocus(app.route);
+    });
+
+    page('/work', function() {
+      app.route = 'work';
       setFocus(app.route);
     });
 
@@ -66,6 +71,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/contact', function() {
       app.route = 'contact';
+      setFocus(app.route);
+    });
+
+    page('/skills', function() {
+      app.route = 'skills';
       setFocus(app.route);
     });
 

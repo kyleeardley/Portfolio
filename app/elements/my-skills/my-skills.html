@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
-<dom-module id="my-greeting">
+<dom-module id="my-skills">
   <template>
     <style include="shared-styles">
       :host {
@@ -14,10 +14,8 @@
       }
     </style>
 
-    <h1 class="page-title" tabindex="-1">{{greeting}}</h1>
-    <label for="greeting-input">Update text to change the greeting.</label>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input id="greeting-input" value="{{greeting::input}}">
+    <h1>Skills</h1>
+    
   </template>
 
   <script>
@@ -25,7 +23,7 @@
       'use strict';
 
       Polymer({
-        is: 'my-greeting',
+        is: 'my-skills',
 
         properties: {
           greeting: {
