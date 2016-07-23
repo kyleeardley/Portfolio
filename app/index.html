@@ -99,7 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <hr class='hrLeft'>
               <hr class='hrRight'>
               <iron-icon icon="help"></iron-icon>
-              <div class='subText'>Who Am I</div>
+              <div class='subText'>Who I am</div>
             </div>
           </a>
           <a data-route="work" href="{{baseUrl}}work">
@@ -111,15 +111,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class='subText'>My Projects</div>
             </div>
           </a>
-          <a data-route="contact" href="{{baseUrl}}contact">
-              <div class='menuItem'>
-              <div class='superText'>Contact</div>
-              <hr class='hrLeft'>
-              <hr class='hrRight'>
-              <iron-icon icon="perm-identity"></iron-icon>
-              <div class='subText'>Get In Touch</div>
-            </div>
-          </a>
           <a data-route="skills" href="{{baseUrl}}skills">
               <div class='menuItem'>
               <div class='superText'>Skills</div>
@@ -127,6 +118,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <hr class='hrRight'>
               <iron-icon icon="build"></iron-icon>
               <div class='subText'>Current Awesomeness</div>
+            </div>
+          </a>
+          <a data-route="contact" href="{{baseUrl}}contact">
+              <div class='menuItem'>
+              <div class='superText'>Contact</div>
+              <hr class='hrLeft'>
+              <hr class='hrRight'>
+              <iron-icon icon="perm-identity"></iron-icon>
+              <div class='subText'>Get In Touch</div>
             </div>
           </a>
         </div>
@@ -166,58 +166,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="about">
               <paper-material elevation="1">
-              <about-me class="focus-target" tabindex="-1"></about-me>
+              <about-me></about-me>
               </paper-material>
             </section>
 
             <section data-route="work">
               <paper-material elevation="1">
-                <my-work class="focus-target" tabindex="-1"></my-work>
-              </paper-material>
-            </section>
-
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>
-                
-              </paper-material>
-            </section>
-
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <contact-me class="focus-target" tabindex="-1"></contact-me>
+                <my-work></my-work>
               </paper-material>
             </section>
 
              <section data-route="skills">
+                <paper-material elevation="1">
+                  <my-skills></my-skills>
+                </paper-material>
+              </section>
+
+            <section data-route="contact">
               <paper-material elevation="1">
-                <my-skills class="focus-target" tabindex="-1"></my-skills>
+                <contact-me></contact-me>
               </paper-material>
             </section>
+            
           </iron-pages>
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>
 
     <paper-toast id="toast"></paper-toast>
-
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
-
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          base-uri="bower_components/platinum-sw/bootstrap"
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="fastest"
-                         cache-config-file="cache-config.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    -->
 
   </template>
 

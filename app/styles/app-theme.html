@@ -32,6 +32,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     text-align: center;
   }
 
+  .fonts {
+    font-family: "din-condensed-web","Trebuchet MS","Arial Narrow",Arial,sans-serif;
+  }
+
+  .large {
+    font-size: 3.5;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
   #menuWrapper {
     position: absolute;
     top: 19%;
@@ -163,48 +173,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 100%;
   }
 
-  #mainToolbar.tall .app-name {
-    font-size: 40px;
-    font-weight: 300;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-
-  #mainToolbar .middle-container,
-  #mainToolbar .bottom-container {
-    @apply(--layout-horizontal);
-    @apply(--layout-center);
-  }
-
-  #mainToolbar .middle-container  {
-    height: 100%;
-    margin-left: 48px;
-  }
-
-  #mainToolbar:not(.tall) .middle-container {
-    font-size: 18px;
-    padding-bottom: 0;
-  }
-
-  #mainToolbar .bottom-container {
-    @apply(--paper-font-subhead);
-
-    margin-left: 48px;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-
   /* Height of the scroll area */
   .content {
     height: 100%;
     background: #fefbf7;
     background: #fefbf7; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(right, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(right, rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Fx 3.6-15*/
-  background: linear-gradient(to right, ,rgba(243,243,241,.8), rgba(254,251,247,.8)); /*Standard*/
+  background: -webkit-linear-gradient(left, rgba(254,251,247,.8), rgba(254,253,250,.8)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right, rgba(254,251,247,.8), rgba(254,253,250,.8)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right, rgba(254,251,247,.8), rgba(254,253,250,.8)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(254,251,247,.8), rgba(254,253,250,.8)); /*Standard*/
     /*background-image: url("../images/beach.jpg");*/
   }
 
