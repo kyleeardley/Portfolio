@@ -1,5 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_compoents/neon-animation/animations/slide-down-animation.html">
+<link rel="import" href="../../bower_compoents/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="javascript-skill.html">
 
 <dom-module id="my-skills">
   <template>
@@ -14,7 +17,9 @@
       }
     </style>
 
-    <h1>Skills</h1>
+    <h1 on-click='displayJavascriptSkill'>Skills</h1>
+    <div on-click='hideJavascriptSkill'>Hide</div>
+    <javascript-skill></javascript-skill>
     
   </template>
 
@@ -31,6 +36,15 @@
             value: 'Kyle',
             notify: true
           }
+        },
+        displayJavascriptSkill: function() {
+        	document.querySelector('javascript-skill').show();
+        },
+        hideJavascriptSkill: function() {
+        	document.querySelector('javascript-skill').hide();
+        },
+        attached: function() {
+        	
         }
       });
     })();
