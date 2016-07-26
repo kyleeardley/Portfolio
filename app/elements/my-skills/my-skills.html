@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
-<link rel="import" href="../../bower_compoents/neon-animation/animations/slide-down-animation.html">
-<link rel="import" href="../../bower_compoents/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="javascript-skill.html">
 
 <dom-module id="my-skills">
@@ -15,11 +15,56 @@
       input {
         @apply(--paper-font-body2);
       }
+      #skillsWrapper {
+      	padding: 30px;
+      	padding-left: 20px;
+      	min-height: 800px;
+      	background: green;
+      }
+      #leftMeter {
+      	width: 20%;
+      	float: left;
+      	color: white;
+      }
+      #jsSkill {
+      	width: 20%;
+      	float: left;
+      	position: relative;
+      	top:200px;
+      }
+      .fonts {
+        font-family: "din-condensed-web";
+      }
+      .medium {
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .large {
+        font-size: 3rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .spacer {
+      	float: left;
+      	margin-bottom: 35px;
+      }
     </style>
 
-    <h1 on-click='displayJavascriptSkill'>Skills</h1>
-    <div on-click='hideJavascriptSkill'>Hide</div>
-    <javascript-skill></javascript-skill>
+    <div class='fonts large' on-click='displayJavascriptSkill'>Skills</div>
+    <div on-click='hideJavascriptSkill'>Reset</div>
+    <div id='skillsWrapper'>
+    	<div id='leftMeter' class='fonts medium'>
+    		<br>
+    		<div class='spacer flex'><hr>Expert<hr></div>
+    		<div class='spacer flex'><hr>Advanced<hr></div>
+    		<div class='spacer flex'><hr>Proficient<hr></div>
+    		<div class='spacer flex'><hr>Still Learning<hr></div>
+    		<div class='spacer flex'><hr>Nube<hr></div>
+    	</div>
+    	<javascript-skill id='jsSkill'></javascript-skill>
+    </div>
     
   </template>
 
@@ -38,10 +83,10 @@
           }
         },
         displayJavascriptSkill: function() {
-        	document.querySelector('javascript-skill').show();
+        	this.querySelector('javascript-skill').show();
         },
         hideJavascriptSkill: function() {
-        	document.querySelector('javascript-skill').hide();
+        	this.querySelector('javascript-skill').hide();
         },
         attached: function() {
         	

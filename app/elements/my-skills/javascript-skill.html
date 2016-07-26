@@ -7,6 +7,8 @@
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-up-animation.html">
 <link rel="import" href="bounce-in-animation.html">
+<link rel="import" href="custom-slide-up.html">
+
 
 <dom-module id="javascript-skill">
   <style>
@@ -21,13 +23,14 @@
     }
     #test {
     	width: 100px;
-    	height: 100px;
-    	border-radius: 50%;
-    	background: blue;
+    	margin-left: auto;
+      	margin-right: auto;
     }
   </style>
   <template>
-  	<div id='test'></div>
+  	<div id='test'>
+  		<img src="../../images/javascript.jpg" alt="Smiley face" height="150" width="150">
+  	</div>
   </template>
   <script>
     Polymer({
@@ -42,19 +45,20 @@
             return {
               'entry': [
               	{
-                name: 'slide-down-animation',
+                name: 'bounce-in-animation',
                 node: this,
                 timing: {delay: 1000, duration: 1000}
               	},
               	{
-                name: 'bounce-in-animation',
+              	name: 'custom-slide-up',
                 node: this,
-                timing: {duration: 1000}
-              	},
+                timing: {delay: 500, duration: 3000},
+              	}
               ],
               'exit': {
                 name: 'fade-out-animation',
-                node: this
+                node: this,
+                timing: {duration: 2000}
               }
             }
           }
