@@ -3,6 +3,7 @@
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="javascript-skill.html">
+<link rel="import" href="polymer-skill.html">
 
 <dom-module id="my-skills">
   <template>
@@ -18,7 +19,7 @@
       #skillsWrapper {
       	padding: 30px;
       	padding-left: 20px;
-      	min-height: 800px;
+      	min-height: 700px;
       	background: green;
       }
       #leftMeter {
@@ -27,10 +28,16 @@
       	color: white;
       }
       #jsSkill {
-      	width: 20%;
+      	width: 12%;
       	float: left;
       	position: relative;
       	top:200px;
+      }
+      #plSkill {
+      	width: 12%;
+      	float: left;
+      	position: relative;
+      	top:160px;
       }
       .fonts {
         font-family: "din-condensed-web";
@@ -48,7 +55,7 @@
       }
       .spacer {
       	float: left;
-      	margin-bottom: 35px;
+      	margin-bottom: 30px;
       }
     </style>
 
@@ -64,6 +71,7 @@
     		<div class='spacer flex'><hr>Nube<hr></div>
     	</div>
     	<javascript-skill id='jsSkill'></javascript-skill>
+    	<polymer-skill id='plSkill'></polymer-skill>
     </div>
     
   </template>
@@ -84,9 +92,11 @@
         },
         displayJavascriptSkill: function() {
         	this.querySelector('javascript-skill').show();
+        	this.querySelector('polymer-skill').show();
         },
         hideJavascriptSkill: function() {
         	this.querySelector('javascript-skill').hide();
+        	this.querySelector('polymer-skill').hide();
         },
         attached: function() {
         	
