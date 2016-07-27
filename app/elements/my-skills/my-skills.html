@@ -4,6 +4,9 @@
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="javascript-skill.html">
 <link rel="import" href="polymer-skill.html">
+<link rel="import" href="css-skill.html">
+<link rel="import" href="python-skill.html">
+<link rel="import" href="problem-solving-skill.html">
 
 <dom-module id="my-skills">
   <template>
@@ -18,9 +21,11 @@
       }
       #skillsWrapper {
       	padding: 30px;
-      	padding-left: 20px;
-      	min-height: 700px;
-      	background: green;
+	    padding-left: 20px;
+	    min-height: 700px;
+	    background: cornflowerblue;
+	    border: solid 6px darkblue;
+	    border-radius: 12px;
       }
       #leftMeter {
       	width: 20%;
@@ -31,13 +36,31 @@
       	width: 12%;
       	float: left;
       	position: relative;
-      	top:200px;
+      	top:180px;
       }
       #plSkill {
       	width: 12%;
       	float: left;
       	position: relative;
-      	top:160px;
+      	top:110px;
+      }
+      #csSkill {
+      	width: 12%;
+      	float: left;
+      	position: relative;
+      	top:220px;
+      }
+      #pySkill {
+      	width: 12%;
+      	float: left;
+      	position: relative;
+      	top:260px;
+      }
+      #probSkill {
+      	width: 12%;
+      	float: left;
+      	position: relative;
+      	top:60px;
       }
       .fonts {
         font-family: "din-condensed-web";
@@ -55,7 +78,7 @@
       }
       .spacer {
       	float: left;
-      	margin-bottom: 30px;
+      	margin-bottom: 40px;
       }
     </style>
 
@@ -63,7 +86,6 @@
     <div on-click='hideJavascriptSkill'>Reset</div>
     <div id='skillsWrapper'>
     	<div id='leftMeter' class='fonts medium'>
-    		<br>
     		<div class='spacer flex'><hr>Expert<hr></div>
     		<div class='spacer flex'><hr>Advanced<hr></div>
     		<div class='spacer flex'><hr>Proficient<hr></div>
@@ -72,6 +94,9 @@
     	</div>
     	<javascript-skill id='jsSkill'></javascript-skill>
     	<polymer-skill id='plSkill'></polymer-skill>
+    	<css-skill id='csSkill'></css-skill>
+    	<python-skill id='pySkill'></python-skill>
+    	<problem-solving-skill id='probSkill'></problem-solving-skill>
     </div>
     
   </template>
@@ -93,10 +118,16 @@
         displayJavascriptSkill: function() {
         	this.querySelector('javascript-skill').show();
         	this.querySelector('polymer-skill').show();
+        	this.querySelector('css-skill').show();
+        	this.querySelector('python-skill').show();
+        	this.querySelector('problem-solving-skill').show();
         },
         hideJavascriptSkill: function() {
         	this.querySelector('javascript-skill').hide();
         	this.querySelector('polymer-skill').hide();
+        	this.querySelector('css-skill').hide();
+        	this.querySelector('python-skill').hide();
+        	this.querySelector('problem-solving-skill').hide();
         },
         attached: function() {
         	

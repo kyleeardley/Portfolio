@@ -6,10 +6,10 @@
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-up-animation.html">
-<link rel="import" href="custom-slide-up.html">
+<link rel="import" href="custom-css-animation.html">
 
 
-<dom-module id="javascript-skill">
+<dom-module id="css-skill">
   <style>
     :host {
       display: none;
@@ -28,12 +28,12 @@
   </style>
   <template>
   	<div id='test'>
-  		<img src="../../images/javascript.jpg" alt="Smiley face" height="130" width="130">
+  		<img src="../../images/css3.png" alt="Smiley face" height="130" width="130">
   	</div>
   </template>
   <script>
     Polymer({
-      is: 'javascript-skill',
+      is: 'css-skill',
       behaviors: [Polymer.NeonAnimationRunnerBehavior],
       properties: {
         opened: {
@@ -44,9 +44,9 @@
             return {
               'entry': 
               	{
-              	name: 'custom-slide-up',
+              	name: 'custom-css-animation',
                 node: this,
-                timing: {delay: 500, duration: 4000},
+                timing: {duration: 5000},
               	},
               'exit': {
                 name: 'fade-out-animation',
