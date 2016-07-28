@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="javascript-skill.html">
@@ -7,6 +8,11 @@
 <link rel="import" href="css-skill.html">
 <link rel="import" href="python-skill.html">
 <link rel="import" href="problem-solving-skill.html">
+<link rel="import" href="java-skill.html">
+<link rel="import" href="jq-skill.html">
+<link rel="import" href="gh-skill.html">
+<link rel="import" href="angular-skill.html">
+<link rel="import" href="bottom-board.html">
 
 <dom-module id="my-skills">
   <template>
@@ -23,44 +29,70 @@
       	padding: 30px;
 	    padding-left: 20px;
 	    min-height: 700px;
-	    background: cornflowerblue;
-	    border: solid 6px darkblue;
-	    border-radius: 12px;
+	    background: #5a86d5;
+	    border-radius: 4px;
       }
       #leftMeter {
-      	width: 20%;
+      	width: 19%;
       	float: left;
       	color: white;
       }
       #jsSkill {
-      	width: 12%;
+      	width: 9%;
       	float: left;
       	position: relative;
-      	top:180px;
+      	top:160px;
       }
       #plSkill {
-      	width: 12%;
+      	width: 9%;
       	float: left;
       	position: relative;
       	top:110px;
       }
       #csSkill {
-      	width: 12%;
+      	width: 9%;
       	float: left;
       	position: relative;
       	top:220px;
       }
       #pySkill {
-      	width: 12%;
+      	width: 9%;
       	float: left;
       	position: relative;
-      	top:260px;
+      	top:280px;
       }
       #probSkill {
-      	width: 12%;
+      	width: 9%;
       	float: left;
       	position: relative;
-      	top:60px;
+      	top:20px;
+      }
+      #jaSkill {
+      	width: 9%;
+      	float: left;
+      	position: relative;
+      	top:270px;
+      }
+      #jqSkill {
+      	width: 9%;
+      	float: left;
+      	position: relative;
+      	top:190px;
+      }
+      #ghSkill {
+      	width: 9%;
+      	float: left;
+      	position: relative;
+      	top:170px;
+      }
+      #angularSkill {
+      	width: 9%;
+      	float: left;
+      	position: relative;
+      	top:400px;
+      }
+      #javascript {
+      	background: white;
       }
       .fonts {
         font-family: "din-condensed-web";
@@ -80,23 +112,51 @@
       	float: left;
       	margin-bottom: 40px;
       }
+      paper-button.custom {
+      	background: #4DB6AC;
+      	margin-bottom: 10px;
+      	color: white;
+      	width: 40%;
+      }
+      paper-button.reset {
+      	background: #00796B;
+      	margin-bottom: 10px;
+      	color: white;
+      	width: 40%;
+      }
+      #buttonWrapper {
+      	margin:0 auto;
+     	width: 26%;
+     	padding-left: 3%;
+     	margin-bottom: 30px;
+      }
     </style>
 
-    <div class='fonts large' on-click='displayJavascriptSkill'>Skills</div>
-    <div on-click='hideJavascriptSkill'>Reset</div>
+    <div class='fonts large'>Skills</div>
+    <div id='buttonWrapper'>
+    	<paper-button raised class='custom' on-click='displayJavascriptSkill'>Animate</paper-button>
+    	<paper-button raised class='reset' on-click='hideJavascriptSkill'>Reset</paper-button>
+    </div>
     <div id='skillsWrapper'>
     	<div id='leftMeter' class='fonts medium'>
     		<div class='spacer flex'><hr>Expert<hr></div>
     		<div class='spacer flex'><hr>Advanced<hr></div>
     		<div class='spacer flex'><hr>Proficient<hr></div>
-    		<div class='spacer flex'><hr>Still Learning<hr></div>
+    		<div class='spacer flex'><hr>Intermediate<hr></div>
     		<div class='spacer flex'><hr>Nube<hr></div>
     	</div>
-    	<javascript-skill id='jsSkill'></javascript-skill>
+    	<span id='javascript'>
+    		<javascript-skill id='jsSkill'></javascript-skill>
+    	</span>
     	<polymer-skill id='plSkill'></polymer-skill>
     	<css-skill id='csSkill'></css-skill>
     	<python-skill id='pySkill'></python-skill>
     	<problem-solving-skill id='probSkill'></problem-solving-skill>
+    	<java-skill id='jaSkill'></java-skill>
+    	<jq-skill id='jqSkill'></jq-skill>
+    	<gh-skill id='ghSkill'></gh-skill>
+    	<angular-skill id='angularSkill'></angular-skill>
+    	<bottom-board id='bottomBoard'></bottom-board>
     </div>
     
   </template>
@@ -121,6 +181,11 @@
         	this.querySelector('css-skill').show();
         	this.querySelector('python-skill').show();
         	this.querySelector('problem-solving-skill').show();
+        	this.querySelector('java-skill').show();
+        	this.querySelector('jq-skill').show();
+        	this.querySelector('gh-skill').show();
+        	this.querySelector('angular-skill').show();
+        	this.querySelector('bottom-board').show();
         },
         hideJavascriptSkill: function() {
         	this.querySelector('javascript-skill').hide();
@@ -128,6 +193,11 @@
         	this.querySelector('css-skill').hide();
         	this.querySelector('python-skill').hide();
         	this.querySelector('problem-solving-skill').hide();
+        	this.querySelector('java-skill').hide();
+        	this.querySelector('jq-skill').hide();
+        	this.querySelector('gh-skill').hide();
+        	this.querySelector('angular-skill').hide();
+        	this.querySelector('bottom-board').hide();
         },
         attached: function() {
         	

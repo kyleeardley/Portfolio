@@ -21,15 +21,32 @@
       width: 300px;
     }
     #test {
-    	width: 100px;
-    	margin-left: auto;
+      width: 100px;
+      margin-left: auto;
       margin-right: auto;
+    }
+    #columnBase {
+      width: 100%;
+      height: 519px;
+      background: #fff;
+      margin-top: -10px;
+    }
+    img {
+      border-radius: 4px 4px 0px 0px;
+      width:100%;
+      height: 109px;
+    }
+    .itemName {
+      text-align: center;
+      margin-top: -21px;
     }
   </style>
   <template>
-  	<div id='test'>
-  		<img src="../../images/polymer.png" alt="Smiley face" height="130" width="130">
-  	</div>
+    <div id='test'>
+      <img src="../../images/polymer.png" alt="Smiley face">
+      <div class='itemName fonts'>Polymer</div>
+      <div id='columnBase'></div>
+    </div>
   </template>
   <script>
     Polymer({
@@ -42,12 +59,18 @@
         animationConfig: {
           value: function() {
             return {
-              'entry': 
+              'entry': [
               	{
               	name: 'custom-pl-animation',
                 node: this,
                 timing: {delay: 500, duration: 3000},
               	},
+                {
+                name: 'fade-in-animation',
+                node: this.$.columnBase,
+                timing: {delay: 3500, duration: 1000},
+                }
+                ],
               'exit': {
                 name: 'fade-out-animation',
                 node: this,

@@ -6,10 +6,8 @@
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
 <link rel="import" href="../../bower_components/neon-animation/animations/slide-up-animation.html">
-<link rel="import" href="custom-css-animation.html">
 
-
-<dom-module id="css-skill">
+<dom-module id="angular-skill">
   <style>
     :host {
       display: none;
@@ -25,27 +23,18 @@
     	margin-left: auto;
       margin-right: auto;
     }
-    #columnBase {
-      width: 100%;
-      height: 473px;
-      background: #01579b;
-      margin-top: -10px;
-    }
     img {
-      border-radius: 4px;
-      width:100%;
-      height: calc(width);
-    }
+        border-radius: 4px;
+      }
   </style>
   <template>
-    <div id='test'>
-      <img src="../../images/css3.png" alt="Smiley face">
-      <div id='columnBase'></div>
-    </div>
+  	<div id='test'>
+  		<img src="../../images/angular.png" alt="Smiley face" height="100" width="100">
+  	</div>
   </template>
   <script>
     Polymer({
-      is: 'css-skill',
+      is: 'angular-skill',
       behaviors: [Polymer.NeonAnimationRunnerBehavior],
       properties: {
         opened: {
@@ -54,18 +43,12 @@
         animationConfig: {
           value: function() {
             return {
-              'entry': [ 
-              	{ 
-              	name: 'custom-css-animation',
+              'entry': 
+              	{
+              	name: 'scale-up-animation',
                 node: this,
-                timing: {duration: 5000},
+                timing: {delay: 500, duration: 6000},
               	},
-                {
-                name: 'fade-in-animation',
-                node: this.$.columnBase,
-                timing: {delay: 5000, duration: 1000},
-                }
-                ],
               'exit': {
                 name: 'fade-out-animation',
                 node: this,
