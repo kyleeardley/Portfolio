@@ -23,14 +23,22 @@
     	margin-left: auto;
       margin-right: auto;
     }
+    #columnBase {
+      width: 100%;
+      height: 227px;
+      background: #992900;
+      margin-top: -10px;
+    }
     img {
-        border-radius: 4px;
-      }
+      border-radius: 4px 4px 0px 0px;
+      width:100%;
+    }
   </style>
   <template>
-  	<div id='test'>
-  		<img src="../../images/angular.png" alt="Smiley face" height="100" width="100">
-  	</div>
+    <div id='test'>
+      <img src="../../images/angular.png" alt="Smiley face">
+      <div id='columnBase'></div>
+    </div>
   </template>
   <script>
     Polymer({
@@ -43,12 +51,18 @@
         animationConfig: {
           value: function() {
             return {
-              'entry': 
+              'entry': [
               	{
               	name: 'scale-up-animation',
                 node: this,
                 timing: {delay: 500, duration: 6000},
               	},
+                {
+                name: 'fade-in-animation',
+                node: this.$.columnBase,
+                timing: {delay: 1000, duration: 6000},
+                }
+                ],
               'exit': {
                 name: 'fade-out-animation',
                 node: this,

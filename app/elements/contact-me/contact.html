@@ -12,10 +12,10 @@
       }
 
       .large {
-        font-size: 3rem;
+        font-size: 3.5rem;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 25px;
+        color: #444;
       }
 
       .formWrapper {
@@ -44,12 +44,18 @@
         margin-right: auto;
         margin-top: 40px;
       }
-
-     
+      #bottom {
+        position: relative;
+        top: 350px;
+      }
     </style>
-
-<div class='fonts large'>Contact</div> 
  
+  {# <span id='top'>
+    <hr style="border-top: dashed 2px #aaa;">
+    <div class='fonts large'>Contact</div>
+    <hr style="border-top: dashed 2px #aaa;">
+  </span> #}
+
   <div class='formWrapper'>
     <form is="iron-form" method="get" action="/" id="eventsDemo">
       <paper-input name="name" label="Your name" required auto-validate>
@@ -68,6 +74,12 @@
       <div class="output"></div>
     </form>
   </div>
+
+  <span id='bottom'>
+    <hr style="border-top: dashed 2px #aaa;">
+    <div class='fonts large'>Contact</div>
+    <hr style="border-top: dashed 2px #aaa;">
+  </span>
 
 <script>
   eventsDemo.addEventListener('change', function(event) {

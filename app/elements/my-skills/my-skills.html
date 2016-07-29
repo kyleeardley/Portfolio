@@ -103,23 +103,23 @@
         text-align: center;
       }
       .large {
-        font-size: 3rem;
+        font-size: 3.5rem;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 25px;
+        color: #444;
       }
       .spacer {
       	float: left;
       	margin-bottom: 40px;
       }
       paper-button.custom {
-      	background: #4DB6AC;
+      	background: #83aaf0;
       	margin-bottom: 10px;
       	color: white;
       	width: 40%;
       }
       paper-button.reset {
-      	background: #00796B;
+      	background: #4668a5;
       	margin-bottom: 10px;
       	color: white;
       	width: 40%;
@@ -132,7 +132,6 @@
       }
     </style>
 
-    <div class='fonts large'>Skills</div>
     <div id='buttonWrapper'>
     	<paper-button raised class='custom' on-click='displayJavascriptSkill'>Animate</paper-button>
     	<paper-button raised class='reset' on-click='hideJavascriptSkill'>Reset</paper-button>
@@ -158,7 +157,11 @@
     	<angular-skill id='angularSkill'></angular-skill>
     	<bottom-board id='bottomBoard'></bottom-board>
     </div>
-    
+    <br>
+    <hr style="border-top: dashed 2px #aaa;">
+    <div class='fonts large'>Skills</div>
+    <hr style="border-top: dashed 2px #aaa;">
+    <br>
   </template>
 
   <script>
