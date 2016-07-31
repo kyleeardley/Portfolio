@@ -25,13 +25,6 @@
       input {
         @apply(--paper-font-body2);
       }
-      #skillsWrapper {
-      	padding: 30px;
-	    padding-left: 20px;
-	    min-height: 700px;
-	    background: #5a86d5;
-	    border-radius: 4px;
-      }
       #leftMeter {
       	width: 19%;
       	float: left;
@@ -112,56 +105,95 @@
       	float: left;
       	margin-bottom: 40px;
       }
-      paper-button.custom {
-      	background: #83aaf0;
-      	margin-bottom: 10px;
-      	color: white;
-      	width: 40%;
+      .animate {
+      	background: crimson;
+      	border-radius: 8px 0px 0px 8px;
+      	border-right: 1px solid white;
+      	margin-left: 47px;
       }
-      paper-button.reset {
-      	background: #4668a5;
-      	margin-bottom: 10px;
-      	color: white;
-      	width: 40%;
+      .reset {
+      	background: purple;
+      	border-radius: 0px 8px 8px 0px;
+      	border-left: 1px solid white;
       }
-      #buttonWrapper {
-      	margin:0 auto;
-     	width: 26%;
-     	padding-left: 3%;
-     	margin-bottom: 30px;
+      .animate, .reset {
+      	display: inline-block;
+      	float: left;
+     	width: 60px;
+     	height: 760px;
+     	color:white;
+     	cursor: pointer;
+     	margin-top: 25px;
       }
+      #animate {
+      	transform: rotate(270deg);
+      	font-size: 2.5rem;
+      	position: absolute;
+    	left: -24px;
+    	top: 495px;
+    	color: white;
+    	cursor: pointer;
+    	display: inline;
+      }
+      #reset {
+      	transform: rotate(90deg);
+	    font-size: 2.5rem;
+	    position: absolute;
+	    left: 1327px;
+	    top: 498px;
+	    color: white;
+	    cursor: pointer;
+	    width: 300px;
+	    display: inline;
+      }
+      #skillsWrapper {
+      	display: inline-block;
+      	float: left;
+      	padding: 30px;
+	    background: #5a86d5;
+	    width: 1283px;
+	    padding-bottom: 5px;
+	    padding-right: 10px;
+	    padding-left: 10px;
+	    margin-top: 25px;
+      }
+  
     </style>
 
-    <div id='buttonWrapper'>
-    	<paper-button raised class='custom' on-click='displayJavascriptSkill'>Animate</paper-button>
-    	<paper-button raised class='reset' on-click='hideJavascriptSkill'>Reset</paper-button>
-    </div>
-    <div id='skillsWrapper'>
-    	<div id='leftMeter' class='fonts medium'>
-    		<div class='spacer flex'><hr>Expert<hr></div>
-    		<div class='spacer flex'><hr>Advanced<hr></div>
-    		<div class='spacer flex'><hr>Proficient<hr></div>
-    		<div class='spacer flex'><hr>Intermediate<hr></div>
-    		<div class='spacer flex'><hr>Nube<hr></div>
-    	</div>
-    	<span id='javascript'>
-    		<javascript-skill id='jsSkill'></javascript-skill>
-    	</span>
-    	<polymer-skill id='plSkill'></polymer-skill>
-    	<css-skill id='csSkill'></css-skill>
-    	<python-skill id='pySkill'></python-skill>
-    	<problem-solving-skill id='probSkill'></problem-solving-skill>
-    	<java-skill id='jaSkill'></java-skill>
-    	<jq-skill id='jqSkill'></jq-skill>
-    	<gh-skill id='ghSkill'></gh-skill>
-    	<angular-skill id='angularSkill'></angular-skill>
-    	<bottom-board id='bottomBoard'></bottom-board>
-    </div>
-    <br>
-    <hr style="border-top: dashed 2px #aaa;">
-    <div class='fonts large'>Skills</div>
-    <hr style="border-top: dashed 2px #aaa;">
-    <br>
+    <div id='pageWrapper'>
+	    <div>
+	    <br>
+	    <hr style="border-top: dashed 2px #aaa;">
+	    <div class='fonts large'>Skills</div>
+	    <hr style="border-top: dashed 2px #aaa;">
+	    <br>
+	</div>
+	    <div class='animate' on-click='displayJavascriptSkill'></div>	    
+	    <div id='skillsWrapper'>
+	    	<div id='leftMeter' class='fonts medium'>
+	    		<div class='spacer flex'><hr>Expert<hr></div>
+	    		<div class='spacer flex'><hr>Advanced<hr></div>
+	    		<div class='spacer flex'><hr>Proficient<hr></div>
+	    		<div class='spacer flex'><hr>Intermediate<hr></div>
+	    		<div class='spacer flex'><hr>Nube<hr></div>
+	    	</div>
+	    	<span id='javascript'>
+	    		<javascript-skill id='jsSkill'></javascript-skill>
+	    	</span>
+	    	<polymer-skill id='plSkill'></polymer-skill>
+	    	<css-skill id='csSkill'></css-skill>
+	    	<python-skill id='pySkill'></python-skill>
+	    	<problem-solving-skill id='probSkill'></problem-solving-skill>
+	    	<java-skill id='jaSkill'></java-skill>
+	    	<jq-skill id='jqSkill'></jq-skill>
+	    	<gh-skill id='ghSkill'></gh-skill>
+	    	<angular-skill id='angularSkill'></angular-skill>
+	    	<bottom-board id='bottomBoard'></bottom-board>
+	    </div>
+	    <div class='reset' on-click='hideJavascriptSkill'></div>
+	</div>
+	<div id='animate' on-click='displayJavascriptSkill'>Play Animation</div>
+	<div id='reset' on-click='hideJavascriptSkill'>Reset Animation</div>
   </template>
 
   <script>
