@@ -20,6 +20,7 @@
 
       .formWrapper {
         padding: 15px;
+        float: left;
         width: 50%;
         background: white;
         /*background-image: url(../../images/tornPaper.png);
@@ -48,38 +49,55 @@
         position: relative;
         top: 350px;
       }
+      #myInfo {
+        float: left;
+        width: 20%;
+        margin-left: 16%;
+        padding-top: 25px;
+      }
+      a {
+        text-decoration: none;
+        color:crimson;
+      }
     </style>
  
-  {# <span id='top'>
+  <br>
+  <span id='top'>
     <hr style="border-top: dashed 2px #aaa;">
     <div class='fonts large'>Contact</div>
     <hr style="border-top: dashed 2px #aaa;">
-  </span> #}
-
-  <div class='formWrapper'>
-    <form is="iron-form" method="get" action="/" id="eventsDemo">
-      <paper-input name="name" label="Your name" required auto-validate>
-        <iron-icon class='icon' icon="account-box" prefix></iron-icon>
-      </paper-input>
-      <paper-input name="e-mail" label="Your e-mail" required auto-validate>
-        <iron-icon class='icon' icon="mail" prefix></iron-icon>
-      </paper-input>
-      <paper-textarea name="message" label="Your Message">
-        <iron-icon class='icon' icon="create" prefix></iron-icon>
-      </paper-textarea>
-      <br><br>
-      <paper-button raised onclick="_delayedSubmit(event)" disabled id="eventsDemoSubmit">
-        <paper-spinner id="spinner" hidden></paper-spinner>Submit</paper-button>
-      <paper-button raised onclick="_reset(event)">Reset</paper-button>
-      <div class="output"></div>
-    </form>
-  </div>
-
-  <span id='bottom'>
-    <hr style="border-top: dashed 2px #aaa;">
-    <div class='fonts large'>Contact</div>
-    <hr style="border-top: dashed 2px #aaa;">
+    <h3 style='text-align: center; font-family: "din-condensed-web"; margin-bottom:50px;'>Currently Available For Full Time Work</h3>
+    <br>
   </span>
+
+  <div id='pageWrapper'>
+    <div id='myInfo'>
+      <span>Kyle Eardley</span><br><br>
+      <span>e-mail: kyleeardley@gmail.com</span><br><br>
+      <span>Phone: 435-669-6750</span><br><br>
+      <span>Home: St. George, Utah</span><br><br>
+      <span><a href='https://www.facebook.com/kyle.eardley.1'>facebook</a> / <a href='https://github.com/kyleeardley'>github</a> / <a href='https://www.linkedin.com/in/kyle-eardley-a9310b7b?trk=hp-identity-name'>linkedin</a>
+      </span>
+    </div>
+    <div class='formWrapper'>
+      <form is="iron-form" method="get" action="/" id="eventsDemo">
+        <paper-input name="name" label="Your name" required auto-validate>
+          <iron-icon class='icon' icon="account-box" prefix></iron-icon>
+        </paper-input>
+        <paper-input name="e-mail" label="Your e-mail" required auto-validate>
+          <iron-icon class='icon' icon="mail" prefix></iron-icon>
+        </paper-input>
+        <paper-textarea name="message" label="Your Message">
+          <iron-icon class='icon' icon="create" prefix></iron-icon>
+        </paper-textarea>
+        <br><br>
+        <paper-button raised onclick="_delayedSubmit(event)" disabled id="eventsDemoSubmit">
+          <paper-spinner id="spinner" hidden></paper-spinner>Submit</paper-button>
+        <paper-button raised onclick="_reset(event)">Reset</paper-button>
+        <div class="output"></div>
+      </form>
+    </div>
+  </div>
 
 <script>
   eventsDemo.addEventListener('change', function(event) {

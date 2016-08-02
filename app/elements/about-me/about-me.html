@@ -7,15 +7,76 @@
       :host {
         display: block;
       }
+      .fonts {
+        font-family: "din-condensed-web";
+      }
 
+      .large {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #444;
+      }
+      #text {
+        float: left;
+        width: 60%;
+      }
+      #pageWrapper {
+        padding-left: 15%;
+        padding-right: 15%;
+      }
+      p {
+        margin-right: 50px;
+      }
+      #image {
+        width: 40%;
+        float: left;
+      }
+      img {
+        width: 100%;
+      }
+      iron-icon {
+        width: 100px;
+        height: 100px;
+        color: crimson;
+        display: block;
+        margin-left: 15%;
+        margin-top: 100px;
+      }
       span,
       input {
         @apply(--paper-font-body2);
       }
     </style>
 
-    <h1>About Me</h1>
-    <img src=../../images/zoolander.png>
+  <br>
+  <span id='top'>
+    <hr style="border-top: dashed 2px #aaa;">
+    <br>
+    <div class='fonts large'>About Me</div>
+    <br>
+    <hr style="border-top: dashed 2px #aaa;">
+    <h3 style='text-align: center; font-family: "din-condensed-web";'>A little Bit About Myself</h3>
+    <br>
+  </span>
+  <div id='pageWrapper'>
+    <h2>Kyle Eardley</h2>
+    <div id='text'>
+      <p>
+        Though I am a front-end developer by day, I have put pen to paper during the design process, been completely lost in a full stack environment and have even worn the entrepreneurship hat.<br><br>
+
+        I am an alumnus of SFU's School of Interactive Arts + Technology program, graduating with a Bachelors of Science with a major in Media Arts. Originally from Vancouver, Canada but now residing in Sydney, Australia, I'm looking to grow personally and professionally anywhere in the world.<br><br>
+
+        I want to be involved in projects that I can be proud of, join an amazing team and advance my development career. Take some time to look at my work, credentials and if you're interested in helping me make this happen, let's get in touch.
+      </p>
+    </div>
+    <div id='image'>
+       <img src=../../images/zoolander.png>
+    </div>
+  </div>
+   <div id='icons'>
+      <iron-icon icon='content-copy'></iron-icon>
+    </div>
   </template>
 
   <script>
