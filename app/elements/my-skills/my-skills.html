@@ -111,10 +111,16 @@
       	border-right: 1px solid white;
       	margin-left: 47px;
       }
+      .animate:hover {
+        background: red;
+      }
       .reset {
       	background: purple;
       	border-radius: 0px 8px 8px 0px;
       	border-left: 1px solid white;
+      }
+      .reset:hover {
+        background: blueviolet;
       }
       .animate, .reset {
       	display: inline-block;
@@ -133,6 +139,9 @@
     	color: white;
     	cursor: pointer;
     	display: inline;
+      }
+      #animate:hover ~ .animate {
+        background: red;
       }
       #reset {
       	transform: rotate(90deg);
@@ -161,10 +170,10 @@
     <div id='pageWrapper'>
 	    <div>
 		    <br>
-		    <hr style="border-top: dashed 2px #aaa;">
+		    <hr style="border-top: 2px solid black;">
 		    <div class='fonts large'>Skills</div>
-		    <hr style="border-top: dashed 2px #aaa;">
-		    <h3 style='text-align: center; font-family: "din-condensed-web";'>Click on Red Play Animation Button To See Skills</h3>
+		    <hr style="border-top: 2px solid black;">
+		    <h3 style='text-align: center; font-family: "din-condensed-web";'>Click On The Side Red Play Animation Button To See Skills</h3>
 	    <br>
 		</div>
 	    <div class='animate' on-click='displayJavascriptSkill'></div>	    
