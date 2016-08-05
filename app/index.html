@@ -139,24 +139,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Content -->
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            
             <section data-route="home">
-              <paper-material elevation="1">
-              <img src='../images/kyle.png' style='float:right;'>
-                <my-greeting class="focus-target" tabindex="-1"></my-greeting>
-
-                <p class="subhead">You now have:</p>
-                <my-list></my-list>
-
-              </paper-material>
-
-              <paper-material elevation="1">
-                <p>This is another card.</p>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <h2 id="license">License</h2>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-              </paper-material>
+              <about-me></about-me>
             </section>
 
             <section data-route="about">
@@ -164,9 +149,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section data-route="work">
-              <paper-material elevation="1">
-                <my-work></my-work>
-              </paper-material>
+              <my-work></my-work>
             </section>
 
             <section data-route="skills">  

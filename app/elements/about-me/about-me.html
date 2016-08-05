@@ -25,6 +25,7 @@
       #pageWrapper {
         padding-left: 15%;
         padding-right: 15%;
+        margin-top: 30px;
       }
       p {
         margin-right: 50px;
@@ -43,20 +44,27 @@
         display: block;
         margin-top: 20px;
       }
-      iron-icon:hover {
-        color: red;
-      }
       #resume {
         text-decoration: none;
         color:crimson;
       }
-      #resumeIframe {
+      #github {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        position: relative;
+        left: 20px;
+      }
+      #resumeIframe, #coverLetterIframe {
         width:97%;
         height:90%;
       }
       #resumeBox {
         float: left;
-        margin-right: 30px;
+        margin-left: 87px;
+        margin-right: 65px;
+
+        cursor: pointer;
       }
       #gitImageBox {
         width: 88px;
@@ -64,10 +72,37 @@
         color: crimson;
         float: left;
         margin-top: 18px;
+        margin-right: 65px;
+      }
+      #CoverLetterBox {
+        float: left;
+        cursor: pointer;
+        display: inline-block;
+        color:crimson;
+      }
+      #coverLetter {
+        margin-left: 6px;
       }
       #modal {
         height: 80%;
         width: 75%
+      }
+      #modal1{
+        height: 80%;
+        width: 75%
+      }
+      #icons {
+        height: 160px;
+      }
+      #pageWrapper {
+        height: 750px;
+      }
+      a {
+        text-decoration: none;
+        color:crimson;
+      }
+      a:hover {
+        color: red;
       }
       span,
       input {
@@ -75,59 +110,76 @@
       }
     </style>
 
-  <br>
-  <span id='top'>
-    <hr style="border-top: 2px solid black;">
     <br>
-    <div class='fonts large'>About Me</div>
-    <br>
-    <hr style="border-top: 2px solid black;">
-    <h3 style='text-align: center; font-family: "din-condensed-web";'>A Little Bit About Myself</h3>
-    <br>
-  </span>
-  <div id='pageWrapper'>
-    <h1 style='font-family: "din-condensed-web";'>Kyle Eardley</h1>
-    <h3 style='font-family: "din-condensed-web";'>Software Engineer</h3>
-    <div id='text'>
-      <p style='margin-top: 0px;'>
-        I am passionate about learning in every area. In fact when I'm not doing fun stuff with my family
-        I like to learn about new technologies like Polymer JS, Firebase, and improving my skills as a programmer.
-        I'm also interested in many other things like: cooking, sports, fishing, mechanical systems and many more.
-        I try to push myself to be my best and to never stop learning and improving.<br><br>
+    <span id='top'>
+      <hr style="border-top: 2px solid black;">
+      <br>
+      <div class='fonts large'>About Me</div>
+      <br>
+      <hr style="border-top: 2px solid black;">
+      <h3 style='text-align: center; font-family: "din-condensed-web"; font-size: 1.4em;'>Kyle Eardley Software Engineer</h3>
+      <br>
+    </span>
+    <div id='pageWrapper'>
+      <div id='text'>
+        <p style='margin-top: 0px;'>
+          I am passionate about learning in every area. In fact when I'm not doing fun stuff with my family
+          I like to learn about new technologies like Polymer JS, Firebase, and improving my skills as a programmer.
+          I'm also interested in many other things like: cooking, sports, fishing, mechanical systems and many more.
+          I try to push myself to be my best and to never stop learning and improving.<br><br>
 
-        My current technical expertise includes cross-platform proficiency (Windows, Linux/Ubuntu);
-        programming languages, frameworks, libraries, and more (including Java, Javascript, Python,
-        Ruby, Django, Rails, Polymer JS, jQuery, CSS, HTML, Angular JS, Git, JSON, REST, MySQL, UI/UX);
-        and good knowledge of developer applications, tools, methodologies and best practices
-        (including OOP, client/server architecture).<br><br>
+          My current technical expertise includes cross-platform proficiency (Windows, Linux/Ubuntu);
+          programming languages, frameworks, libraries, and more (including Java, Javascript, Python,
+          Ruby, Django, Rails, Polymer JS, jQuery, CSS, HTML, Angular JS, Git, JSON, REST, MySQL, UI/UX);
+          and good knowledge of developer applications, tools, methodologies and best practices
+          (including OOP, client/server architecture).<br><br>
 
-        I am currently working as a software engineer for iGlobal Stores, where I have been repeatedly
-        recognized for developing innovative solutions for our main software product The Verse. I am
-        responsible for much of the development of this next-generation software, from initial requirement
-        gathering to design, coding, testing, documentation and implementation.<br><br>
+          I am currently working as a software engineer for iGlobal Stores, where I have been repeatedly
+          recognized for developing innovative solutions for our main software product The Verse. I am
+          responsible for much of the development of this next-generation software, from initial requirement
+          gathering to design, coding, testing, documentation and implementation.<br><br>
 
-        I am also known for excellent interpersonal skills and an always happy attitude.  I'd like to think that I offer
-        a unique ability to complete tasks efficiently with an easy going personality.
-        <br><br>
-      </p>
-      <div id='icons'>
-        <div id='resumeBox' onclick="modal.open()">
-          <iron-icon icon='content-copy'></iron-icon>
-          <span id='resume'>View Resume</span>
-        </div>
-        <div id='gitImageBox'>
-          <img src='../../images/github.png'
-          <span id='resume'>GitHub</span>
+          I am also known for excellent interpersonal skills and an always happy attitude.  I'd like to think that I offer
+          a unique ability to complete tasks efficiently with an easy going personality.
+          <br><br>
+        </p>
+
+        <div id='icons'>
+          <div id='resumeBox' onclick="modal.open()">
+            <iron-icon icon='content-copy'></iron-icon>
+            <span id='resume'>View Resume</span>
+          </div>
+          <div id='gitImageBox'>
+            <a href='https://github.com/kyleeardley' target='_blank'>
+              <img src='../../images/github.png'>
+              <span id='github'>GitHub</span>
+            </a>
+          </div>
+          <div id='CoverLetterBox' onclick="modal1.open()">
+            <iron-icon icon='mail'></iron-icon>
+              <span id='coverLetter'>Cover Letter</span>
+          </div>
         </div>
       </div>
+      <div id='image'>
+         <img src=../../images/kyle4.JPG>
+      </div>
+      <div id='social'>
+        <a href='https://www.facebook.com/kyle.eardley.1' target='_blank'>facebook</a> / 
+        <a href='https://github.com/kyleeardley' target='_blank'>github</a> / 
+        <a href='https://www.linkedin.com/in/kyle-eardley-a9310b7b?trk=hp-identity-name' target='_blank'>linkedin</a>
+      </div>
     </div>
-    <div id='image'>
-       <img src=../../images/kyle4.JPG>
-    </div>
-  </div>
 
-   <paper-dialog id="modal" modal>
+    <paper-dialog id="modal" modal>
       <iframe src="../../images/Resume.pdf#zoom=120" id='resumeIframe' frameborder="no"></iframe>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Close</paper-button>
+      </div>
+    </paper-dialog>
+
+    <paper-dialog id="modal1" modal>
+      <iframe src="../../images/CoverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
