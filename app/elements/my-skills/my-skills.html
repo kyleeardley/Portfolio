@@ -28,7 +28,7 @@
       #leftMeter {
       	width: 19%;
       	float: left;
-      	color: white;
+      	color: black;
       }
       #jsSkill {
       	width: 9%;
@@ -106,63 +106,60 @@
       	margin-bottom: 40px;
       }
       .animate {
-      	background: crimson;
+      	background: cornflowerblue;
       	border-radius: 8px 0px 0px 8px;
       	border-right: 1px solid white;
       	margin-left: 47px;
       }
       .animate:hover {
-        background: red;
+        background: darkblue;
       }
       .reset {
-      	background: purple;
+      	background: cornflowerblue;
       	border-radius: 0px 8px 8px 0px;
       	border-left: 1px solid white;
       }
       .reset:hover {
-        background: blueviolet;
+        background: darkblue;
       }
       .animate, .reset {
       	display: inline-block;
       	float: left;
-     	width: 60px;
-     	height: 760px;
-     	color:white;
-     	cursor: pointer;
+     	  width: 60px;
+     	  height: 760px;
+     	  color:white;
+     	  cursor: pointer;
       }
       #animate {
       	transform: rotate(270deg);
       	font-size: 2.5rem;
       	position: absolute;
-    	left: -24px;
-    	top: 535px;
-    	color: white;
-    	cursor: pointer;
-    	display: inline;
-      }
-      #animate:hover ~ .animate {
-        background: red;
+    	  left: -24px;
+    	  top: 535px;
+    	  color: white;
+    	  cursor: pointer;
+    	  display: inline;
       }
       #reset {
       	transform: rotate(90deg);
-	    font-size: 2.5rem;
-	    position: absolute;
-	    left: 1327px;
-	    top: 535px;
-	    color: white;
-	    cursor: pointer;
-	    width: 300px;
-	    display: inline;
+	      font-size: 2.5rem;
+	      position: absolute;
+	      left: 1327px;
+	      top: 535px;
+	      color: white;
+	      cursor: pointer;
+	      width: 300px;
+	      display: inline;
       }
       #skillsWrapper {
       	display: inline-block;
       	float: left;
       	padding: 30px;
-	    background: #5a86d5;
-	    width: 1283px;
-	    padding-bottom: 5px;
-	    padding-right: 10px;
-	    padding-left: 10px;
+	      background: aliceblue;
+	      width: 1283px;
+	      padding-bottom: 5px;
+	      padding-right: 10px;
+	      padding-left: 10px;
       }
   
     </style>
@@ -173,7 +170,7 @@
 		    <hr style="border-top: 2px solid black;">
 		    <div class='fonts large'>Skills</div>
 		    <hr style="border-top: 2px solid black;">
-		    <h3 style='text-align: center; font-family: "din-condensed-web";'>Click On The Side Red Play Animation Button To See Skills</h3>
+		    <h3 style='text-align: center; font-family: "din-condensed-web";'>Click On The Play Animation Button To See Skills</h3>
 	    <br>
 		</div>
 	    <div class='animate' on-click='displayJavascriptSkill'></div>	    
