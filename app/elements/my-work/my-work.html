@@ -23,8 +23,8 @@
         width: 60%;
       }
       #pageWrapper {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 10%;
+        padding-right: 8%;
         margin-top: 30px;
       }
       p {
@@ -55,47 +55,24 @@
         position: relative;
         left: 20px;
       }
-      #resumeIframe, #coverLetterIframe {
+      #verseIframe, #verseFinancialIframe {
         width:97%;
         height:90%;
-      }
-      #resumeBox {
-        float: left;
-        margin-left: 87px;
-        margin-right: 65px;
 
-        cursor: pointer;
       }
-      #gitImageBox {
-        width: 88px;
-        height: 88px;
-        color: crimson;
-        float: left;
-        margin-top: 18px;
-        margin-right: 65px;
-      }
-      #CoverLetterBox {
-        float: left;
-        cursor: pointer;
-        display: inline-block;
-        color:crimson;
-      }
-      #coverLetter {
-        margin-left: 6px;
-      }
-      #modal {
+      #verseModal {
         height: 80%;
-        width: 75%
+        width: 80%
       }
-      #modal1{
+      #verseFinancialModal{
         height: 80%;
-        width: 75%
+        width: 80%
       }
       #icons {
         height: 160px;
       }
       #pageWrapper {
-        height: 750px;
+        height: 740px;
       }
       a {
         text-decoration: none;
@@ -103,6 +80,42 @@
       }
       a:hover {
         color: red;
+      }
+      .box {
+        cursor: pointer;
+        z-index: 101;
+        width: 27%;
+        float: left;
+        margin-right: 30px;
+        border: 1px solid #aaa;
+        padding: 20px;
+        border-radius: 4px;
+        margin-top: 30px;
+        text-align: center;
+      }
+      .box:hover {
+        z-index: 99;
+      }
+      .row {
+        margin-top: 20px;
+      }
+      .row span {
+        position: relative;
+        top: 7px;
+        font-size: 1.3em;
+      }
+      .innerDiv:hover {
+        z-index: 99;
+      }
+      .innerDiv {
+        z-index: 101;
+      }
+      .glassCover {
+        z-index: 100;
+        background: black;
+      }
+      #social {
+        text-align: center;
       }
       span,
       input {
@@ -117,69 +130,68 @@
       <div class='fonts large'>My Work</div>
       <br>
       <hr style="border-top: 2px solid black;">
-      <h3 style='text-align: center; font-family: "din-condensed-web"; font-size: 1.4em;'>Some Cool Projects I've Worked On</h3>
-      <br>
+      <h3 style='text-align: center; font-family: "din-condensed-web"; font-size: 1.4em;'>A Few Of The Cool Projects I've Built</h3>
     </span>
     <div id='pageWrapper'>
-      <div id='text'>
-        <p style='margin-top: 0px;'>
-          I am passionate about learning in every area. In fact when I'm not doing fun stuff with my family
-          I like to learn about new technologies like Polymer JS, Firebase, and improving my skills as a programmer.
-          I'm also interested in many other things like: cooking, sports, fishing, mechanical systems and many more.
-          I try to push myself to be my best and to never stop learning and improving.<br><br>
+      <div class='row'>
 
-          My current technical expertise includes cross-platform proficiency (Windows, Linux/Ubuntu);
-          programming languages, frameworks, libraries, and more (including Java, Javascript, Python,
-          Ruby, Django, Rails, Polymer JS, jQuery, CSS, HTML, Angular JS, Git, JSON, REST, MySQL, UI/UX);
-          and good knowledge of developer applications, tools, methodologies and best practices
-          (including OOP, client/server architecture).<br><br>
+        <div class='box' onclick="verseModal.open()">
+          <img src='../../images/screenshot1.png'>
+          <span>The Verse Sass App</span>
+        </div>
 
-          I am currently working as a software engineer for iGlobal Stores, where I have been repeatedly
-          recognized for developing innovative solutions for our main software product The Verse. I am
-          responsible for much of the development of this next-generation software, from initial requirement
-          gathering to design, coding, testing, documentation and implementation.<br><br>
-
-          I am also known for excellent interpersonal skills and an always happy attitude.  I'd like to think that I offer
-          a unique ability to complete tasks efficiently with an easy going personality.
-          <br><br>
-        </p>
-
-        <div id='icons'>
-          <div id='resumeBox' onclick="modal.open()">
-            <iron-icon icon='content-copy'></iron-icon>
-            <span id='resume'>View Resume</span>
-          </div>
-          <div id='gitImageBox'>
-            <a href='https://github.com/kyleeardley' target='_blank'>
-              <img src='../../images/github.png'>
-              <span id='github'>GitHub</span>
+        <div class='box'>
+            <a href='http://www.islandbatik.com/' target='_blank'>
+              <img src='../../images/islandBatik.png'>
             </a>
-          </div>
-          <div id='CoverLetterBox' onclick="modal1.open()">
-            <iron-icon icon='mail'></iron-icon>
-              <span id='coverLetter'>Cover Letter</span>
-          </div>
+            <span>Island Batik Site</span>
+        </div>
+
+        <div class='box' onclick="verseFinancialModal.open()">
+          <img src='../../images/screenshot2.png'>
+          <span>The Verse Financials</span>
+        </div>
+
+      </div>
+
+      <div class='row'>
+        <div class='box'>
+          <a href='http://www.patchworkangels.com/' target='_blank'>
+            <img src='../../images/patchworkAngels.png'>
+          </a>
+          <span>Patchwork Angels Site</span>
+        </div>
+        <div class='box'>
+          <a href='https://www.southwestskinandcancer.com/' target='_blank'>
+            <img src='../../images/swsandCancer.png'>
+          </a>
+          <span>Southwest Skin and Cancer Site</span>
+        </div>
+        <div class='box'>
+          <a href='https://www.fortworthfabricstudio.com/' target='_blank'>
+            <img src='../../images/fortWorthFabricStudio.png'>
+          </a>
+          <span>Fort Worth Fabrics Site</span>
         </div>
       </div>
-      <div id='image'>
-         <img src=../../images/kyle4.JPG>
-      </div>
-      <div id='social'>
+      
+    </div>
+
+    <div id='social'>
         <a href='https://www.facebook.com/kyle.eardley.1' target='_blank'>facebook</a> / 
         <a href='https://github.com/kyleeardley' target='_blank'>github</a> / 
         <a href='https://www.linkedin.com/in/kyle-eardley-a9310b7b?trk=hp-identity-name' target='_blank'>linkedin</a>
       </div>
-    </div>
 
-    <paper-dialog id="modal" modal>
-      <iframe src="../../images/Resume.pdf#zoom=120" id='resumeIframe' frameborder="no"></iframe>
+    <paper-dialog id="verseModal" modal>
+      <img src="../../images/screenshot1.png" id='verseIframe'>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
     </paper-dialog>
 
-    <paper-dialog id="modal1" modal>
-      <iframe src="../../images/CoverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
+    <paper-dialog id="verseFinancialModal" modal>
+      <img src="../../images/screenshot2.png" id='verseFinancialIframe'>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
