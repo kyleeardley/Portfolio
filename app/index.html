@@ -49,6 +49,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
   <!-- endbuild -->
 
   <!-- Because this project uses vulcanize this should be your only html import
@@ -83,7 +87,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px">
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="600px">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
 
@@ -169,7 +173,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
 
-  <!-- build:js scripts/app.js -->
+  <!-- build:js scripts/app.js 
 <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -180,7 +184,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     storageBucket: "portfolio-c0c8b.appspot.com",
   };
   firebase.initializeApp(config);
-</script>
+</script>-->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

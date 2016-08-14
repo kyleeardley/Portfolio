@@ -84,9 +84,6 @@
       	position: relative;
       	top:400px;
       }
-      #javascript {
-      	background: white;
-      }
       .fonts {
         font-family: "din-condensed-web";
       }
@@ -160,6 +157,70 @@
 	      padding-bottom: 5px;
 	      padding-right: 10px;
 	      padding-left: 10px;
+        margin-bottom: 100px;
+      }
+        @media only screen and (max-width: 1815px) {
+        #skillsWrapper {
+            width: 1220px;
+            height: 712px;
+            padding: 0px;
+        }
+        #reset {
+          left: 1244px;
+        }
+        .animate, .reset {
+          height: 712px;
+        }
+      }
+      @media only screen and (max-width: 1750px) {
+        #skillsWrapper {
+            width: 1120px;
+            height: 653px;
+        }
+        #leftMeter {
+          margin-right: 25px;
+          height: 653px;
+        }
+        #reset {
+          left: 1147px;
+          top: 503px;
+        }
+        #animate {
+          top: 503px;
+        }
+        #jsSkill, #angularSkill, #csSkill, #ghSkill, #jaSkill, #jqSkill, #plSkill, #probSkill, #pySkill {
+          width: 95px;
+        }
+        .animate, .reset {
+          height: 653px;
+        }
+        .spacer {
+          margin-bottom: 30px;
+        }
+      }
+      @media only screen and (max-width: 1650px) {
+        #skillsWrapper {
+            width: 1020px;
+            height: 725px;
+        }
+        #leftMeter {
+          margin-right: 45px;
+        }
+        #reset {
+          left: 1048px;
+        }
+        #animate {
+          top: 512px;
+        }
+        #jsSkill, #angularSkill, #csSkill, #ghSkill, #jaSkill, #jqSkill, #plSkill, #probSkill, #pySkill {
+          width: 86px;
+        }
+      }
+      @media only screen and (max-width: 1530px) {
+        
+      }
+      @media only screen and (max-width: 962px) {
+       
       }
   
     </style>
@@ -182,9 +243,7 @@
 	    		<div class='spacer flex'><hr>Intermediate<hr></div>
 	    		<div class='spacer flex'><hr>Nube<hr></div>
 	    	</div>
-	    	<span id='javascript'>
-	    		<javascript-skill id='jsSkill'></javascript-skill>
-	    	</span>
+	    	<javascript-skill id='jsSkill'></javascript-skill>
 	    	<polymer-skill id='plSkill'></polymer-skill>
 	    	<css-skill id='csSkill'></css-skill>
 	    	<python-skill id='pySkill'></python-skill>

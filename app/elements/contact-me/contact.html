@@ -1,4 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../../bower_components/polymerfire/firebase-auth.html">
 
 <dom-module id="contact-me">
   <template>
@@ -6,54 +8,26 @@
       :host {
         display: block;
       }
-
       .fonts {
         font-family: "din-condensed-web";
       }
-
       .large {
         font-size: 3.5rem;
         text-transform: uppercase;
         text-align: center;
         color: #444;
       }
-
       .formWrapper {
-        padding: 15px;
-        float: left;
-        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 75px;
+        width: 52%;
         background: white;
-        /*background-image: url(../../images/tornPaper.png);
-        background-size: 680px 550px;
-        background-repeat: no-repeat;*/
         margin-left: auto;
         margin-right: auto;
-        min-height: 400px;
+        height: 400px;
         border-radius: 4px;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      }
-
-      .icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 6px;
-      }
-
-      #eventsDemo {
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-      }
-      #bottom {
-        position: relative;
-        top: 350px;
-      }
-      #myInfo {
-        float: left;
-        width: 20%;
-        margin-left: 16%;
-        padding-top: 25px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
       a {
         text-decoration: none;
@@ -61,6 +35,54 @@
       }
       a:hover {
         color: red;
+      }
+      .medium {
+        font-size: 1.8rem;
+        font-family: "din-condensed-web"
+      }
+      #cameo {
+        float: left;
+        width: 33%;
+      }
+      #cameo img {
+        width: 100%;
+        margin-left: 5%;
+      }
+      #contactText {
+        width: 57%;
+        display: inline-block;
+        float: left;
+      }
+      @media only screen and (max-width: 1600px) {
+        .medium {
+            font-size: 1.5rem;
+        }
+      }
+      @media only screen and (max-width: 1450px) {
+        .formWrapper {
+            width: 75%;
+            height: 400px;
+        }
+      }
+      @media only screen and (max-width: 1350px) {
+        .formWrapper {
+            width: 75%;
+            height: 370px;
+        }
+      }
+      @media only screen and (max-width: 1150px) {
+        .formWrapper {
+            height: 300px;
+        }
+      }
+      @media only screen and (max-width: 962px) {
+        .medium {
+            font-size: 1rem;
+        }
+        .formWrapper {
+            width: 95%;
+            height: 290px;
+        }
       }
     </style>
  
@@ -74,60 +96,21 @@
   </span>
 
   <div id='pageWrapper'>
-    <div id='myInfo'>
-      <span>Kyle Eardley</span><br><br>
-      <span>e-mail: kyleeardley@gmail.com</span><br><br>
-      <span>Phone: 435-669-6750</span><br><br>
-      <span>Home: St. George, Utah</span><br><br>
-      <span><a href='https://www.facebook.com/kyle.eardley.1' target='_blank'>facebook</a> / <a href='https://github.com/kyleeardley' target='_blank'>github</a> / <a href='https://www.linkedin.com/in/kyle-eardley-a9310b7b?trk=hp-identity-name' target='_blank'>linkedin</a>
-      </span>
-    </div>
-    <div class='formWrapper'>
-      <form is="iron-form" method="get" action="/" id="eventsDemo">
-        <paper-input name="name" label="Your name" required auto-validate>
-          <iron-icon class='icon' icon="account-box" prefix></iron-icon>
-        </paper-input>
-        <paper-input name="e-mail" label="Your e-mail" required auto-validate>
-          <iron-icon class='icon' icon="mail" prefix></iron-icon>
-        </paper-input>
-        <paper-textarea name="message" label="Your Message">
-          <iron-icon class='icon' icon="create" prefix></iron-icon>
-        </paper-textarea>
-        <br><br>
-        <paper-button raised onclick="_delayedSubmit(event)" disabled id="eventsDemoSubmit">
-          <paper-spinner id="spinner" hidden></paper-spinner>Submit</paper-button>
-        <paper-button raised onclick="_reset(event)">Reset</paper-button>
-        <div class="output"></div>
-      </form>
+    <div id='myInfo' class='formWrapper'>
+      <div id='contactText'>
+        <span class='medium'>Kyle Eardley</span><br><br>
+        <span class='medium'>e-mail: kyleeardley@gmail.com</span><br><br>
+        <span class='medium'>Phone: 435-669-6750</span><br><br>
+        <span class='medium'>Home: St. George, Utah</span><br><br>
+        <span><a href='https://www.facebook.com/kyle.eardley.1' target='_blank'>facebook</a> / <a href='https://github.com/kyleeardley' target='_blank'>github</a> / <a href='https://www.linkedin.com/in/kyle-eardley-a9310b7b?trk=hp-identity-name' target='_blank'>linkedin</a>
+        </span>
+      </div>
+      <div id='cameo'>
+        <img src='../../images/kyle2.JPG'>
+      </div>
     </div>
   </div>
 
-<script>
-  eventsDemo.addEventListener('change', function(event) {
-    // Validate the entire form to see if we should enable the `Submit` button.
-    eventsDemoSubmit.disabled = !eventsDemo.validate();
-  });
-  function _delayedSubmit(event) {
-    spinner.active = true;
-    spinner.hidden = false;
-    eventsDemoSubmit.disabled = true;
-    // Simulate a slow server response.
-    setTimeout(function() {
-      Polymer.dom(event).localTarget.parentElement.submit();
-    }, 1000);
-  }
-  function _reset(event) {
-    var form = Polymer.dom(event).localTarget.parentElement
-    form.reset();
-    form.querySelector('.output').innerHTML = '';
-  }
-  document.getElementById('eventsDemo').addEventListener('iron-form-submit', function(event) {
-    spinner.active = false;
-    spinner.hidden = true;
-    eventsDemoSubmit.disabled = false;
-    this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
-  });
-</script>
   </template>
 
   <script>
@@ -138,11 +121,7 @@
         is: 'contact-me',
 
         properties: {
-          greeting: {
-            type: String,
-            value: 'Kyle',
-            notify: true
-          }
+          
         }
       });
     })();

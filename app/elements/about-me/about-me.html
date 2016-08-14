@@ -74,7 +74,7 @@
         margin-top: 18px;
         margin-right: 65px;
       }
-      #CoverLetterBox {
+      #coverLetterBox {
         float: left;
         cursor: pointer;
         display: inline-block;
@@ -97,12 +97,19 @@
       #pageWrapper {
         height: 750px;
       }
-      a {
+      iron-icon:hover{
+        color:red;
+      }
+      a, #gitImage {
         text-decoration: none;
         color:crimson;
+        opacity:.8;
       }
       a:hover {
-        color: red;
+        opacity: 1;
+      }
+      #gitImage {
+        opacity: 1;
       }
       span,
       input {
@@ -145,17 +152,17 @@
         </p>
 
         <div id='icons'>
-          <div id='resumeBox' onclick="modal.open()">
+          <div id='resumeBox' onclick="resumeModal.open()">
             <iron-icon icon='content-copy'></iron-icon>
             <span id='resume'>View Resume</span>
           </div>
           <div id='gitImageBox'>
             <a href='https://github.com/kyleeardley' target='_blank'>
-              <img src='../../images/github.png'>
+              <img src='../../images/github.png' id='gitImage'>
               <span id='github'>GitHub</span>
             </a>
           </div>
-          <div id='CoverLetterBox' onclick="modal1.open()">
+          <div id='coverLetterBox' onclick="coverLetterModal.open()">
             <iron-icon icon='mail'></iron-icon>
               <span id='coverLetter'>Cover Letter</span>
           </div>
@@ -171,15 +178,15 @@
       </div>
     </div>
 
-    <paper-dialog id="modal" modal>
-      <iframe src="../../images/Resume.pdf#zoom=120" id='resumeIframe' frameborder="no"></iframe>
+    <paper-dialog id="resumeModal" modal>
+      <iframe src="../../images/resume.pdf#zoom=120" id='resumeIframe' frameborder="no"></iframe>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
     </paper-dialog>
 
-    <paper-dialog id="modal1" modal>
-      <iframe src="../../images/CoverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
+    <paper-dialog id="coverLetterModal" modal>
+      <iframe src="../../images/coverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
@@ -195,11 +202,6 @@
         is: 'about-me',
 
         properties: {
-          greeting: {
-            type: String,
-            value: 'Kyle',
-            notify: true
-          }
         }
       });
     })();
