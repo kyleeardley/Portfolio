@@ -57,11 +57,42 @@
           height: 80px;
         }
       }
+      @media only screen and (max-width: 1540px) {
+        #test {
+          width: 60px;
+        }
+        #columnBase {
+          height: 361px;
+        }
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      @media only screen and (max-width: 1275px) {
+        #test {
+          width: 40px;
+          position: relative;
+          top: -54px;
+        }
+        #columnBase {
+          height: 270px;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        #poly {
+          font-size: .6em;
+          position: relative;
+          top: 20px;
+        }
+      }
   </style>
   <template>
     <div id='test'>
       <img src="../../images/polymer.png" alt="Smiley face">
-      <div class='itemName fonts'>Polymer</div>
+      <div id='poly' class='itemName fonts'>Polymer</div>
       <div id='columnBase'></div>
     </div>
   </template>
