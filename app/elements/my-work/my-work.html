@@ -81,21 +81,6 @@
       a:hover {
         color: red;
       }
-      .box {
-        cursor: pointer;
-        z-index: 101;
-        width: 27%;
-        float: left;
-        margin-right: 30px;
-        border: 1px solid #aaa;
-        padding: 20px;
-        border-radius: 4px;
-        margin-top: 30px;
-        text-align: center;
-      }
-      .box:hover {
-        z-index: 99;
-      }
       .row {
         margin-top: 20px;
       }
@@ -104,22 +89,124 @@
         top: 7px;
         font-size: 1.3em;
       }
-      .innerDiv:hover {
-        z-index: 99;
-      }
-      .innerDiv {
-        z-index: 101;
-      }
-      .glassCover {
-        z-index: 100;
-        background: black;
-      }
       #social {
         text-align: center;
       }
       span,
       input {
         @apply(--paper-font-body2);
+      }
+      @media only screen and (max-width: 1790px) {
+        .box {
+          width: 26%;
+          margin-right: 30px;
+        }
+        .row span {
+          font-size: 1.1em;
+        }
+      }
+      @media only screen and (max-width: 1540px) {
+        .box {
+          width: 25%;
+          margin-right: 25px;
+        }
+        .row span {
+          font-size: .85em;
+        }
+      }
+      @media only screen and (max-width: 1322px) {
+        .box {
+          width: 24%;
+          margin-right: 20px;
+        }
+        .row span {
+          font-size: .8em;
+        }
+      }
+      @media only screen and (max-width: 1322px) {
+        .row span {
+          font-size: .7em;
+        }
+      }
+      @media only screen and (max-width: 1153px) {
+        .row span {
+          font-size: .6em;
+        }
+        .box {
+          width: 23%;
+          margin-right: 18px;
+        }
+      }
+      @media only screen and (max-width: 1068px) {
+        .row span {
+          font-size: .5em;
+        }
+        .box {
+          width: 22%;
+          margin-right: 18px;
+        }
+      }
+      @media only screen and (max-width: 988px) {
+        .row span {
+          font-size: .7em;
+        }
+        .box {
+          width: 35%;
+          margin-right: 18px;
+        }
+      }
+      @media only screen and (max-width: 830px) {
+        .row span {
+          font-size: .5em;
+        }
+        .box {
+          width: 33%;
+          margin-right: 18px;
+        }
+        #pageWrapper {
+          padding-left: 0%;
+          padding-right: 0%;
+          margin-top: 30px;
+        }
+      }
+      #patchworkTextBox {
+        position: relative;
+        top: 273px;
+        background: white;
+        display: inline;
+      }
+      .box {
+        cursor: pointer;
+        width: 27%;
+        float: left;
+        margin-right: 30px;
+        border: 1px solid #aaa;
+        padding: 20px;
+        border-radius: 4px;
+        margin-top: 30px;
+        text-align: center;
+        position: relative;
+        /*top: 0; right: 0; bottom: 0; left: 0;*/
+        background: #fff;
+        overflow: hidden;
+        min-height: 160px;
+      }
+      .inner {
+        position: absolute; 
+        top: 0; right: 0; bottom: 0; left: 0; /* places it exactly inside its container */
+        padding: 10px;
+        background: #fff;
+        overflow: hidden;
+        height:100%;
+        min-height: 160px;
+        display: none;
+        color: white;
+      }
+      .box:hover div.inner{
+        bottom: auto;
+        display: block;
+        z-index: 1000;
+        background: rgba(0,0,0,.8);
       }
     </style>
 
@@ -133,28 +220,25 @@
       <h3 style='text-align: center; font-family: "din-condensed-web"; font-size: 1.4em;'>A Few Of The Cool Projects I've Built</h3>
     </span>
     <div id='pageWrapper'>
-      <div class='row'>
-
+     
         <div class='box' onclick="verseModal.open()">
           <img src='../../images/screenshot1.png'>
           <span>The Verse Sass App</span>
+          <div class='inner'>This is where the text will go</div>
         </div>
-
         <div class='box'>
             <a href='http://www.islandbatik.com/' target='_blank'>
               <img src='../../images/islandBatik.png'>
             </a>
             <span>Island Batik Site</span>
         </div>
-
         <div class='box' onclick="verseFinancialModal.open()">
           <img src='../../images/screenshot2.png'>
           <span>The Verse Financials</span>
         </div>
+      
 
-      </div>
-
-      <div class='row'>
+     
         <div class='box'>
           <a href='http://www.patchworkangels.com/' target='_blank'>
             <img src='../../images/patchworkAngels.png'>
@@ -173,7 +257,7 @@
           </a>
           <span>Fort Worth Fabrics Site</span>
         </div>
-      </div>
+   
       
     </div>
 
@@ -207,11 +291,9 @@
         is: 'my-work',
 
         properties: {
-          greeting: {
-            type: String,
-            value: 'Kyle',
-            notify: true
-          }
+        },
+        openTextBox: function() {
+          console.log('openBox is firing');
         }
       });
     })();
