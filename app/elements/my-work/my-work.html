@@ -84,10 +84,42 @@
       .row {
         margin-top: 20px;
       }
-      .row span {
+      .box span {
         position: relative;
         top: 7px;
         font-size: 1.3em;
+      }
+      .box {
+        cursor: pointer;
+        width: 27%;
+        float: left;
+        margin-right: 30px;
+        border: 1px solid #aaa;
+        padding: 20px;
+        border-radius: 4px;
+        margin-top: 30px;
+        text-align: center;
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+        min-height: 160px;
+      }
+      .inner {
+        position: absolute; 
+        top: 0; right: 0; bottom: 0; left: 0; /* places it exactly inside its container */
+        padding: 10%;
+        background: #fff;
+        overflow: hidden;
+        height:100%;
+        min-height: 160px;
+        display: none;
+        color: white;
+      }
+      .box:hover div.inner{
+        bottom: auto;
+        display: block;
+        z-index: 100;
+        background: rgba(0,0,0,.8);
       }
       #social {
         text-align: center;
@@ -101,7 +133,7 @@
           width: 26%;
           margin-right: 30px;
         }
-        .row span {
+        .box span {
           font-size: 1.1em;
         }
       }
@@ -110,7 +142,10 @@
           width: 25%;
           margin-right: 25px;
         }
-        .row span {
+        .box span {
+          font-size: .85em;
+        }
+        .inner {
           font-size: .85em;
         }
       }
@@ -119,17 +154,15 @@
           width: 24%;
           margin-right: 20px;
         }
-        .row span {
+        .box span {
           font-size: .8em;
         }
-      }
-      @media only screen and (max-width: 1322px) {
-        .row span {
+        .inner {
           font-size: .7em;
         }
       }
       @media only screen and (max-width: 1153px) {
-        .row span {
+        .box span {
           font-size: .6em;
         }
         .box {
@@ -138,7 +171,7 @@
         }
       }
       @media only screen and (max-width: 1068px) {
-        .row span {
+        .box span {
           font-size: .5em;
         }
         .box {
@@ -147,16 +180,19 @@
         }
       }
       @media only screen and (max-width: 988px) {
-        .row span {
+        .box span {
           font-size: .7em;
         }
         .box {
           width: 35%;
           margin-right: 18px;
         }
+        .inner {
+          font-size: .85em;
+        }
       }
       @media only screen and (max-width: 830px) {
-        .row span {
+        .box span {
           font-size: .5em;
         }
         .box {
@@ -168,46 +204,11 @@
           padding-right: 0%;
           margin-top: 30px;
         }
+        .inner {
+          font-size: .7em;
+        }
       }
-      #patchworkTextBox {
-        position: relative;
-        top: 273px;
-        background: white;
-        display: inline;
-      }
-      .box {
-        cursor: pointer;
-        width: 27%;
-        float: left;
-        margin-right: 30px;
-        border: 1px solid #aaa;
-        padding: 20px;
-        border-radius: 4px;
-        margin-top: 30px;
-        text-align: center;
-        position: relative;
-        /*top: 0; right: 0; bottom: 0; left: 0;*/
-        background: #fff;
-        overflow: hidden;
-        min-height: 160px;
-      }
-      .inner {
-        position: absolute; 
-        top: 0; right: 0; bottom: 0; left: 0; /* places it exactly inside its container */
-        padding: 10px;
-        background: #fff;
-        overflow: hidden;
-        height:100%;
-        min-height: 160px;
-        display: none;
-        color: white;
-      }
-      .box:hover div.inner{
-        bottom: auto;
-        display: block;
-        z-index: 1000;
-        background: rgba(0,0,0,.8);
-      }
+      
     </style>
 
     <br>
@@ -224,36 +225,51 @@
         <div class='box' onclick="verseModal.open()">
           <img src='../../images/screenshot1.png'>
           <span>The Verse Sass App</span>
-          <div class='inner'>This is where the text will go</div>
+          <div class='inner' on-click='removeInnerDiv'>This is the Verse order detail page, I am currently
+            responsible for the content of this app.  I am also the single largest contributor at about 22,000 
+            plus lines of code.  The Verse is a Javascript/Polymer front end and a Nodejs Java back end.
+            <br><br>Click To See a Closer View
+          </div>
         </div>
         <div class='box'>
-            <a href='http://www.islandbatik.com/' target='_blank'>
-              <img src='../../images/islandBatik.png'>
-            </a>
-            <span>Island Batik Site</span>
+          <a href='http://www.islandbatik.com/' target='_blank'>
+            <img src='../../images/islandBatik.png'>
+            <div class='inner' on-click='removeInnerDiv'>This is a website that I helped to design and to develop.
+              While working for Velocity Webworks I designed and built many websites and other apps.  This is a Python/Django site.<br><br>Click To See Island Batik's Site
+            </div>
+          </a>
+          <span>Island Batik Site</span>
         </div>
         <div class='box' onclick="verseFinancialModal.open()">
           <img src='../../images/screenshot2.png'>
           <span>The Verse Financials</span>
+          <div class='inner' on-click='removeInnerDiv'>This is a screen shot of a financial page in the Verse, 
+            among other things I'm entirely responsible for the financial content both front and back side for the Verse
+            <br><br>Click To See a Closer View
+          </div>
         </div>
-      
-
-     
         <div class='box'>
           <a href='http://www.patchworkangels.com/' target='_blank'>
             <img src='../../images/patchworkAngels.png'>
+            <div class='inner' on-click='removeInnerDiv'>Patchwork is another website that I helped to design and to develop
+              while working for Velocity Webworks.<br><br>Click To See Patchwork Angel's Site
+            </div>
           </a>
           <span>Patchwork Angels Site</span>
         </div>
         <div class='box'>
           <a href='http://www.southwestskinandcancer.com/' target='_blank'>
             <img src='../../images/swsandCancer.png'>
+            <div class='inner' on-click='removeInnerDiv'>Southwest Skin and Cancer was my first website
+              project and I built this one on my own using Ruby on Rails as the framework. <br><br>Click To See Southwest Skin and Cancer's site
+            </div>
           </a>
           <span>Southwest Skin and Cancer Site</span>
         </div>
         <div class='box'>
           <a href='https://www.fortworthfabricstudio.com/' target='_blank'>
             <img src='../../images/fortWorthFabricStudio.png'>
+            <div class='inner'><br><br><br>Click To See Fort Worth Fabric Studio's site</div>
           </a>
           <span>Fort Worth Fabrics Site</span>
         </div>
@@ -291,6 +307,12 @@
         is: 'my-work',
 
         properties: {
+        },
+        removeInnerDiv: function() {
+          var innerDivs = this.querySelectorAll('.inner');
+          for(var i=0; i < innerDivs.length-1; i++ ) {
+            innerDivs[i].style.zIndex = 0;
+          }
         },
         openTextBox: function() {
           console.log('openBox is firing');

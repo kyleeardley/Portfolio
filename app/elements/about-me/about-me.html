@@ -40,7 +40,7 @@
       iron-icon {
         width: 88px;
         height: 88px;
-        color: crimson;
+        color: red;
         display: block;
         margin-top: 20px;
       }
@@ -93,12 +93,13 @@
       }
       #icons {
         height: 160px;
+        width: 233%;
       }
       #pageWrapper {
         height: 750px;
       }
       iron-icon:hover{
-        color:red;
+        color:#7f0000;
       }
       a, #gitImage {
         text-decoration: none;
@@ -114,6 +115,21 @@
       span,
       input {
         @apply(--paper-font-body2);
+      }
+       @media only screen and (max-width: 1410px) {
+       #text {
+        font-size: .8em;
+       }
+      }
+      @media only screen and (max-width: 1150px) {
+       #text {
+        font-size: .7em;
+       }
+      }
+      @media only screen and (max-width: 950px) {
+       #text {
+        font-size: .6em;
+       }
       }
     </style>
 
