@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="custom-bounce-in-animation.html">
 
 <dom-module id="about-me">
   <template>
@@ -40,20 +41,40 @@
       iron-icon {
         width: 88px;
         height: 88px;
-        color: red;
+        color: crimson;
         display: block;
         margin-top: 20px;
       }
-      #resume {
+      iron-icon:hover{
+        color:red;
+      }
+      #icons {
+        height: 160px;
+        width: 233%;
+      }
+      a, #gitImage {
         text-decoration: none;
-        color:crimson;
+      }
+      #gitImageBox {
+        width: 88px;
+        height: 88px;
+        color: crimson;
+        float: left;
+        margin-top: 18px;
+        margin-right: 65px;
       }
       #github {
         text-align: center;
         text-decoration: none;
-        color: black;
         position: relative;
         left: 20px;
+      }
+      #pageWrapper {
+        height: 750px;
+      }
+      #resume {
+        text-decoration: none;
+        color:crimson;
       }
       #resumeIframe, #coverLetterIframe {
         width:97%;
@@ -66,14 +87,6 @@
 
         cursor: pointer;
       }
-      #gitImageBox {
-        width: 88px;
-        height: 88px;
-        color: crimson;
-        float: left;
-        margin-top: 18px;
-        margin-right: 65px;
-      }
       #coverLetterBox {
         float: left;
         cursor: pointer;
@@ -83,34 +96,13 @@
       #coverLetter {
         margin-left: 6px;
       }
-      #modal {
+      #resumeModal {
         height: 80%;
         width: 75%
       }
-      #modal1{
+      #coverLetterModal{
         height: 80%;
         width: 75%
-      }
-      #icons {
-        height: 160px;
-        width: 233%;
-      }
-      #pageWrapper {
-        height: 750px;
-      }
-      iron-icon:hover{
-        color:#7f0000;
-      }
-      a, #gitImage {
-        text-decoration: none;
-        color:crimson;
-        opacity:.8;
-      }
-      a:hover {
-        opacity: 1;
-      }
-      #gitImage {
-        opacity: 1;
       }
       span,
       input {
@@ -120,11 +112,27 @@
        #text {
         font-size: .8em;
        }
+       #resumeModal {
+        height: 85%;
+        width: 85%
+        }
+      #coverLetterModal{
+        height: 85%;
+        width: 85%
+        }
       }
       @media only screen and (max-width: 1150px) {
        #text {
         font-size: .7em;
        }
+       #resumeModal {
+        height: 95%;
+        width: 95%
+        }
+      #coverLetterModal{
+        height: 95%;
+        width: 95%
+        }
       }
       @media only screen and (max-width: 950px) {
        #text {
@@ -151,8 +159,7 @@
           I'm also interested in many other things like: cooking, sports, fishing, mechanical systems and many more.
           I try to push myself to be my best and to never stop learning and improving.<br><br>
 
-          My current technical expertise includes cross-platform proficiency (Windows, Linux/Ubuntu);
-          programming languages, frameworks, libraries, and more (including Java, Javascript, Python,
+          My current technical expertise includes languages, frameworks, libraries, and more (including Java, Javascript, Python,
           Ruby, Django, Rails, Polymer JS, jQuery, CSS, HTML, Angular JS, Git, JSON, REST, MySQL, UI/UX);
           and good knowledge of developer applications, tools, methodologies and best practices
           (including OOP, client/server architecture).<br><br>
@@ -168,18 +175,18 @@
         </p>
 
         <div id='icons'>
-          <div id='resumeBox' onclick="resumeModal.open()">
-            <iron-icon icon='content-copy'></iron-icon>
+          <div id='resumeBox' on-click="resumeModalOpen">
+            <iron-icon id='resumeIcon' icon='content-copy' on-mouseenter='startAnimation' data-args="Resume"></iron-icon>
             <span id='resume'>View Resume</span>
           </div>
           <div id='gitImageBox'>
             <a href='https://github.com/kyleeardley' target='_blank'>
-              <img src='../../images/github.png' id='gitImage'>
+              <img src='../../images/github.png' id='gitImage' on-mouseenter='startAnimation' data-args="Github">
               <span id='github'>GitHub</span>
             </a>
           </div>
-          <div id='coverLetterBox' onclick="coverLetterModal.open()">
-            <iron-icon icon='mail'></iron-icon>
+          <div id='coverLetterBox' on-click="coverLetterModalOpen">
+            <iron-icon id='coverLetterImage' icon='mail' on-mouseenter='startAnimation' data-args="CoverLetter"></iron-icon>
               <span id='coverLetter'>Cover Letter</span>
           </div>
         </div>
@@ -202,7 +209,7 @@
     </paper-dialog>
 
     <paper-dialog id="coverLetterModal" modal>
-      <iframe src="../../images/coverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
+      <iframe src="../../images/genericCoverLetter.pdf#zoom=120" id='coverLetterIframe' frameborder="no"></iframe>
       <div class="buttons">
         <paper-button dialog-confirm autofocus>Close</paper-button>
       </div>
@@ -217,7 +224,64 @@
       Polymer({
         is: 'about-me',
 
+        behaviors: [Polymer.NeonAnimationRunnerBehavior],
+
         properties: {
+          animationConfig: {
+          value: function() {
+            return {
+              'entryResume': 
+                {
+                name: 'custom-bounce-in-animation',
+                node: this.$.resumeIcon,
+                timing: {delay: 0, duration: 300},
+                },
+              'entryGithub': 
+                {
+                name: 'custom-bounce-in-animation',
+                node: this.$.gitImage,
+                timing: {delay: 0, duration: 300},
+                },
+              'entryCoverLetter': 
+                {
+                name: 'custom-bounce-in-animation',
+                node: this.$.coverLetterImage,
+                timing: {delay: 0, duration: 300},
+                },
+              'exit': {
+                name: 'fade-out-animation',
+                node: this,
+                timing: {duration: 2000}
+              }
+            }
+          }
+        }
+        },
+        startAnimation: function(event) {
+          var nodeId = 'entry' + event.target.dataset.args;
+          this.show(nodeId);
+        },
+        resumeModalOpen: function() {
+          this.$.resumeModal.open();
+        },
+        coverLetterModalOpen: function() {
+          this.$.coverLetterModal.open();
+        },
+        show: function(nodeId) {
+        this.opened = true;
+        this.style.display = 'inline-block';
+        this.cancelAnimation();
+        this.playAnimation(nodeId);
+        },
+        hide: function() {
+          this.opened = false;
+          this.cancelAnimation();
+          this.playAnimation('exit');
+        },
+        _onNeonAnimationFinish: function() {
+          if (!this.opened) {
+            this.style.display = 'none';
+          }
         }
       });
     })();
